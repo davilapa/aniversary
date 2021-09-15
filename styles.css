@@ -1,9 +1,76 @@
+
+body {
+  margin: 0;
+  font-family:'Inter', Courier, monospace;
+}
+/* Create a sticky/fixed navbar */
+#navbar {
+  overflow: hidden;
+  background-color: #3590F3;
+  padding: 30px 10px; /* Large padding which will shrink on scroll (using JS) */
+  transition: 0.3s; /* Adds a transition effect when the padding is decreased */
+  position: fixed; /* Sticky/fixed navbar */
+  width: 100%;
+  top: 0; /* At the top */
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the navbar links */
+#navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo */
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Links on mouse-over */
+#navbar a:hover {
+  color: #fff;
+}
+
+
+/* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+  #navbar-right {
+    float: none;
+  }
+}
+
+.photos{
+  margin-top: 120px;
+}
 .row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px 0 20px;
+}
+@media screen and (max-width: 580px) {
+  .row {
     padding: 0 4px;
   }
-  
+}
   /* Create four equal columns that sits next to each other */
   .column {
     flex: 24%;
@@ -32,3 +99,54 @@
       max-width: 100%;
     }
   }
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 5px;
+  border: 1px solid #888;
+  width: 25%; /* Could be more or less, depending on screen size */
+}
+
+@media screen and (max-width: 580px) {
+  .modal-content {
+    width: 95%;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #C2BBF0;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: #8FB8ED;
+  color: white;
+}
