@@ -100,6 +100,15 @@ body {
     }
   }
 
+.my-thoughts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 21px;
+  text-align: justify;
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
